@@ -1,0 +1,41 @@
+.searchbar {
+  padding: 0 8px;
+  background-color: white;
+  width: 80%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  column-gap: 16px;
+}
+
+.searchbarInput {
+  padding: 0 10px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.searchbarInput::placeholder {
+    color: var(--secondary-color);
+}
+
+.searchButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-image: linear-gradient(to top, #1cd8d2, #93edc7);
+  transition: all ease-out 300ms;
+  color: white;
+}
+.searchButton:hover {
+  background-image: linear-gradient(to top, #93edc7, #1cd8d2);
+  cursor: pointer;
+}
+
+.cardShowSection{
+  margin : 50px 0;
+}

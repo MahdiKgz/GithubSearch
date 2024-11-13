@@ -1,11 +1,36 @@
-import React from 'react'
-import "./ShowBox.module.css"
+import React, { useState } from "react";
+import styles from "./ShowBox.module.css";
+import { Repository } from "../../features/repositorySlice";
+import Card from "../Card/Card";
+import { usePaginate } from "../../helpers/utils";
+import Pagination from "../Pagination/Pagination";
 
-
-function ShowBox() {
-  return (
-    <div>ShowBox</div>
-  )
+interface ShowBoxProps {
+  repositories: Repository[];
 }
 
-export default ShowBox
+const ShowBox: React.FC<ShowBoxProps> = ({ repositories }) => {
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pagintedRepos, count] = usePaginate(repositories, 8, currentPage);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  return (
+    <React.Fragment>
+      <div className={styles.cardWrapper}>
+        {pagintedRepos.map((repo) => (
+          <Card key={repo.id} card={repo} />
+        ))}
+      </div>
+      <Pagination
+        count={count}
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+      />
+    </React.Fragment>
+  );
+};
+
+export default ShowBox;
