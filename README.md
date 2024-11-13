@@ -69,7 +69,7 @@ License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 Developer
-This project was created by [Your Name]. Feel free to reach out if you have any questions or feedback.
+This project was created by Mahdi Khoshghadam Zadeh. Feel free to reach out if you have any questions or feedback.
 
 Thank you for using the Favorite Repositories App! 🎉
 
